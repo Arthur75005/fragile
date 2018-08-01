@@ -30,11 +30,6 @@ class Lessons
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Categories", inversedBy="lessons")
-     */
-    private $categories_idcategories;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Categories", inversedBy="lessons")
      * @ORM\JoinColumn(nullable=false)
      */
     private $idcategories;
@@ -69,37 +64,6 @@ class Lessons
     public function setLesson(string $lesson): self
     {
         $this->lesson = $lesson;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Categories[]
-     */
-    public function getCategoriesIdcategories(): Collection
-    {
-        return $this->categories_idcategories;
-    }
-
-    public function addCategoriesIdcategory(Categories $categoriesIdcategory): self
-    {
-        if (!$this->categories_idcategories->contains($categoriesIdcategory)) {
-            $this->categories_idcategories[] = $categoriesIdcategory;
-            $categoriesIdcategory->setLessons($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCategoriesIdcategory(Categories $categoriesIdcategory): self
-    {
-        if ($this->categories_idcategories->contains($categoriesIdcategory)) {
-            $this->categories_idcategories->removeElement($categoriesIdcategory);
-            // set the owning side to null (unless already changed)
-            if ($categoriesIdcategory->getLessons() === $this) {
-                $categoriesIdcategory->setLessons(null);
-            }
-        }
 
         return $this;
     }
