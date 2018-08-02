@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController
 {
 
-    public function index()
+    public function index():Response
     {
         $tab = array("toto" => 22, "tata" => 11);
         return new Response(
