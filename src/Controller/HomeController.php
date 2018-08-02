@@ -24,6 +24,8 @@ class HomeController extends Controller
             "user" => [
                 "Nom" => "Razowski",
                 "Prenom" => "Bob",
+                "Avatar" => "https://www.journaldemickey.com/sites/default/files/dico/Bob%20Razowski%20-%20Monstres%20Academy.jpg",
+                
             ]
         ]);
     }
