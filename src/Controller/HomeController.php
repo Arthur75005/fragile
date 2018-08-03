@@ -12,19 +12,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
+        // return $this->render('home/index.html.twig', [
+        //     'controller_name' => 'HomeController',
+        //     "user" => [
+        //         "Nom" => "Razowski",
+        //         "Prenom" => "Bob",
+        //         "Avatar" => "https://www.journaldemickey.com/sites/default/files/dico/Bob%20Razowski%20-%20Monstres%20Academy.jpg",
+        //     ]
+        // ]);
+
+        return $this->render('offline/signup.html.twig');
     }
     
-    public function home()
-    {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-            "user" => [
-                "Nom" => "Razowski",
-                "Prenom" => "Bob",
-            ]
-        ]);
-    }
 }

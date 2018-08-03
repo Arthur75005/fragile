@@ -21,3 +21,4 @@ postRegister:
     controller: App\Controller\RegisterController::postRegister
     methods: [POST]
 
+
