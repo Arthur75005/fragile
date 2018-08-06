@@ -16,13 +16,6 @@ class LoginController extends Controller
     public function register():Response
     {
     }
-    public function postLogin():Response
-    {
-        $tab = array("toto" => 22, "tata" => 11);
-        return new Response(
-            json_encode($tab)
-        );
-    }
     public function postRegister():Response
     {
     }

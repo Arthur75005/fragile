@@ -5,16 +5,12 @@ index:
 login:
     path: /login
     controller: App\Controller\LoginController::login
-    methods: [GET]
 
-postLogin:
-    path: /login
-    controller: App\Controller\LoginController::postLogin
-    methods: [POST]
 
 register:
     path: /register
     controller: App\Controller\RegisterController::register
+    methods: [GET]
 
 postRegister:
     path: /register
