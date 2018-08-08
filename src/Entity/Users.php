@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+
 use Doctrine\ORM\Mapping as ORM;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UsersRepository")
@@ -36,10 +38,10 @@ class Users
      */
     private $phone;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $created;
+    // /**
+    //  * @ORM\Column(type="datetime")
+    //  */
+    // private $created;
 
     /**
      * @ORM\Column(type="datetime")
@@ -104,21 +106,17 @@ class Users
         return $this->created;
     }
 
-    public function setCreated(\DateTimeInterface $created): self
-    {
-        $this->created = $created;
 
-        return $this;
-    }
 
     public function getUpdated(): ?\DateTimeInterface
     {
         return $this->updated;
     }
 
-    public function setUpdated(\DateTimeInterface $updated): self
+    public function setUpdated(): self
     {
-        $this->updated = $updated;
+        
+        $this->updated = new \DateTime();
 
         return $this;
     }

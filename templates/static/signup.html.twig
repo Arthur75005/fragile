@@ -1,0 +1,70 @@
+{% extends "base-offline.html.twig" %}
+
+
+{% block title %} Register {% endblock %}
+
+{% block style_background %}
+    style="background-image:url(https://www.globesailor.fr/doc/cruise/107/main_lg.jpg)"
+{% endblock %}
+
+{% block formulaire %} 
+    <form method="GET">
+        <div class="form-group">
+            <label class="text-normal text-dark">Firstname</label> 
+            <input type="text" name="firstname" class="form-control" placeholder="John">
+        </div>
+        <div class="form-group">
+            <label class="text-normal text-dark">Lastname</label> 
+            <input type="text" name="lastname" class="form-control" placeholder="Doe">
+        </div>
+        <div class="form-group">
+            <label class="text-normal text-dark">Email</label> 
+            <input type="email" name="email" class="form-control" placeholder="JohnDoe@msn.com">
+        </div>
+        <div class="form-group">
+            <label class="text-normal text-dark">Password</label> 
+            <input type="password" name="password" class="form-control" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label class="text-normal text-dark">Phone</label> 
+            <input type="tel" name="phone" class="form-control" placeholder="0615234569">
+        </div>
+        <div class="form-group">
+            <div class="peers ai-c jc-sb fxw-nw">
+                <div class="peer">
+                    <div class="peers ai-c">
+                    <a href="/login">
+                    <label for="inputCall1" class="peers peer-greed js-sb ai-c"><span class="peer peer-greed">Etes-vous déjà inscrit</span></label></a>
+                    </div>
+                </div>
+                <div class="peer"><button type="submit" class="btn btn-primary">Register</button></div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        $(document).ready(function(){
+            $("form").submit(function(e){
+                e.preventDefault();
+                    let isVide = false;
+                    for(let i = 0; i < $("form input").length; i++){
+                        if($("form input").eq(i).val().length < 1)
+                        isVide = true;
+
+                    }
+             if(!isVide)
+             {
+                let data = $(this).serialize();
+                $.post("/register", data, function(data){
+                    console.log(data);
+                })
+             }
+            else
+                alert("input not value !!");
+                 
+            })
+        })
+    </script>
+ {% endblock %}

@@ -9,12 +9,14 @@ login:
 
 register:
     path: /register
-    controller: App\Controller\RegisterController::register
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
     methods: [GET]
+    defaults:
+        template: static/signup.html.twig
 
 postRegister:
     path: /register
-    controller: App\Controller\RegisterController::postRegister
+    controller: App\Controller\LoginController::postRegister
     methods: [POST]
 
 
